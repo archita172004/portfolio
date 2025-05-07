@@ -70,7 +70,7 @@ export default function Home() {
           <div className="absolute bottom-0 right-0 w-full h-full flex items-end justify-center">
             <div className="relative w-4/5 h-4/5 flex items-end">
               <Image
-                src="/kuro.jpg"
+                src="/download.jpg"
                 alt="Profile"
                 layout="fill"
                 className="object-contain object-bottom"

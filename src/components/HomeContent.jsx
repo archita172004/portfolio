@@ -13,8 +13,16 @@ const HomeContent = () => {
       </div> */}
 
       <div className="relative z-10 px-8">
-        <h2 className="text-xl tracking-widest font-semibold">IT BERRIES</h2>
-        <p className="mt-4 text-sm leading-relaxed">{/* Your paragraph */}</p>
+        <h2 className="text-xl tracking-widest font-semibold">AC DEVS</h2>
+        <p className="mt-4 text-sm leading-relaxed">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
+          ad illum laudantium delectus corporis vero libero deserunt eaque velit
+          hic. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+          quaerat quos blanditiis optio, maiores tempora amet ad ipsam debitis
+          aut doloremque. Aliquid ex ipsa hic placeat dolore distinctio iure
+          exercitationem qui at, est, temporibus minus corrupti dignissimos,
+          ipsum nostrum corporis.
+        </p>
         <button className="mt-4 border border-white px-4 py-2">
           Read More
         </button>
