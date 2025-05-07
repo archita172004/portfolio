@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import Aboutme from "@/components/Aboutme";
 import "./globals.css";
+import Skills from "@/components/Skills";
 // import Navbar from "@/components/Navbar";
 
 // const geistSans = Geist({
@@ -33,6 +34,7 @@ export default function RootLayout({
         {/* <Navbar /> */}
         {children}
         <Aboutme />
+        <Skills />
       </body>
     </html>
   );
