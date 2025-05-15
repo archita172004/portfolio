@@ -1,11 +1,9 @@
 "use client";
-
 import { cn } from "@/utils/utils";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
-
 import { useState } from "react";
-
+import { HiOutlineLink } from "react-icons/hi2";
 export const HoverEffect = ({
   items,
   className,
@@ -52,10 +50,8 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card image={item.image}>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription link={item.link}>
-              {item.description}
-            </CardDescription>
+            <CardTitle link={item.link}>{item.title}</CardTitle>
+            <CardDescription>{item.description}</CardDescription>
           </Card>
         </div>
       ))}
@@ -96,24 +92,35 @@ export const Card = ({
 };
 
 export const CardTitle = ({
-  className,
-  children,
-}: {
-  className?: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
-      {children}
-    </h4>
-  );
-};
-export const CardDescription = ({
   link,
   className,
   children,
 }: {
   link?: string;
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <h4
+      className={cn(
+        "text-zinc-100 font-bold tracking-wide mt-4 flex items-center gap-2 ",
+        className
+      )}
+    >
+      {children}
+      {link && (
+        <Link href={link} className="mt-4 block underline  hover:text-blue-300">
+          <HiOutlineLink />
+        </Link>
+      )}
+    </h4>
+  );
+};
+
+export const CardDescription = ({
+  className,
+  children,
+}: {
   className?: string;
   children: React.ReactNode;
 }) => {
@@ -125,15 +132,6 @@ export const CardDescription = ({
       )}
     >
       {children}
-
-      {link && (
-        <Link
-          href={link}
-          className="mt-4 block underline text-blue-400 hover:text-blue-300"
-        >
-          View Project →
-        </Link>
-      )}
     </p>
   );
 };

@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-
 const Contact = () => {
   return (
     <div className="bg-gray-200 w-full font-mono py-16">
