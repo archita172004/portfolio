@@ -1,5 +1,6 @@
+import Link from "next/link";
 import React from "react";
-
+import { FiExternalLink } from "react-icons/fi";
 const HomeContent = () => {
   return (
     <div className="relative bg-[#1a1a1a] text-white py-12">
@@ -13,19 +14,20 @@ const HomeContent = () => {
       </div> */}
 
       <div className="relative z-10 px-8">
-        <h2 className="text-xl tracking-widest font-semibold">AC DEVS</h2>
+        <h2 className="text-xl tracking-widest font-semibold">
+          Welcome to my corner of the internet!
+        </h2>
         <p className="mt-4 text-sm leading-relaxed">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
-          ad illum laudantium delectus corporis vero libero deserunt eaque velit
-          hic. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-          quaerat quos blanditiis optio, maiores tempora amet ad ipsam debitis
-          aut doloremque. Aliquid ex ipsa hic placeat dolore distinctio iure
-          exercitationem qui at, est, temporibus minus corrupti dignissimos,
-          ipsum nostrum corporis.
+          I’m a full-stack developer who loves bringing designs to life and
+          building things that are both functional and visually appealing. I’m
+          always experimenting with new technologies and finding ways to improve
+          my skills, focusing on creating smooth, user-friendly experiences.
         </p>
-        <button className="mt-4 border border-white px-4 py-2">
-          Read More
-        </button>
+        <Link href="https://drive.google.com/file/d/1_D78guD96anVx6Eh8vbMVDRSVwWa5fs_/view?usp=sharing">
+          <button className="inline-flex items-center gap-2 mt-4 border border-white px-4 py-2 hover:bg-white hover:text-black transition duration-300">
+            View resume <FiExternalLink />
+          </button>
+        </Link>
       </div>
     </div>
   );

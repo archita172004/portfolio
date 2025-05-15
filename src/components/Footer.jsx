@@ -28,7 +28,7 @@ const Footer = () => {
       {/* Social Icons */}
       <div className="flex justify-center gap-6 mb-6 text-xl">
         <a
-          href="https://twitter.com"
+          href="https://x.com/architachaudha5"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:opacity-80 transition"
@@ -36,7 +36,7 @@ const Footer = () => {
           <FaTwitter />
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/archita-chaudhary-a04373256/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:opacity-80 transition"
@@ -52,7 +52,7 @@ const Footer = () => {
           <FaInstagram />
         </a>
         <a
-          href="mailto:example@example.com"
+          href="mailto:archichaudhary2004@gmail.com"
           className="hover:opacity-80 transition"
         >
           <FaEnvelope />

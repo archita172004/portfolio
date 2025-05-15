@@ -5,6 +5,8 @@ import "./globals.css";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import HomeContent from "@/components/HomeContent";
+import Projects from "@/components/Projects";
 // import Navbar from "@/components/Navbar";
 
 // const geistSans = Geist({
@@ -35,8 +37,10 @@ export default function RootLayout({
       >
         {/* <Navbar /> */}
         {children}
+        <HomeContent />
         <Aboutme />
         <Skills />
+        <Projects />
         <Contact />
         <Footer />
       </body>
