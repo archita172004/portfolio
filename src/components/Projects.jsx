@@ -40,7 +40,7 @@ const Projects = () => {
   const className = "gap-6 px-6";
 
   return (
-    <div className="bg-gray-200 w-full py-14">
+    <div id="projects" className="bg-gray-200 w-full py-14">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex justify-center mb-16">
           <div className="border-6 border-black px-12 py-6">

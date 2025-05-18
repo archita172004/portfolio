@@ -3,3 +3,6 @@
 .clip-diagonal {
   clip-path: polygon(0 0, 70% 0, 50% 100%, 0% 100%);
 }
+html {
+  scroll-behavior: smooth;
+}

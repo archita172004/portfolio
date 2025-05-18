@@ -52,7 +52,7 @@ const Skills = () => {
     },
   ];
   return (
-    <div className="bg-gray-200 w-full py-16">
+    <div id="skills" className="bg-gray-200 w-full py-16">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="flex justify-center mb-16">

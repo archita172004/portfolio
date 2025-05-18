@@ -41,10 +41,14 @@ const Contact = () => {
       console.error("Error sending:", err);
       setStatus(`❌Error sending message.`);
     }
+
+    setTimeout(() => {
+      setStatus("");
+    }, 3000);
   };
 
   return (
-    <div className="bg-gray-200 w-full font-mono py-16">
+    <div id="contact" className="bg-gray-200 w-full font-mono py-16">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="flex justify-center mb-16">
@@ -117,11 +121,22 @@ const Contact = () => {
                 SUBMIT
               </button>
             </div>
-            {status && <p className="">{status}</p>}
+            {status && (
+              <p
+                className={`text-center font-bold font-mono text-lg mt-4 transition-all duration-300 ${
+                  status.startsWith("Sending")
+                    ? "text-gray-600"
+                    : status.startsWith("❌")
+                      ? "text-red-600"
+                      : "text-green-600"
+                }`}
+              >
+                {status}
+              </p>
+            )}
           </form>
         </div>
       </div>
-      7
     </div>
   );
 };
