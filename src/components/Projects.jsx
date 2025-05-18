@@ -35,13 +35,6 @@ const Projects = () => {
         "A JavaScript-based app that helps users split bills with friends easily, track who owes what, and manage shared expenses efficiently.",
       link: "2",
     },
-
-    {
-      title: "DevConnect",
-      description:
-        "A social platform for developers to showcase projects, blog, and collaborate on ideas.",
-      link: "",
-    },
   ];
 
   const className = "gap-6 px-6";

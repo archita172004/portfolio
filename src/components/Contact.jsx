@@ -1,6 +1,48 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 const Contact = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+    phone: "",
+  });
+  const [status, setStatus] = useState(null);
+
+  const handleChange = (e) => {
+    console.log(e.target.name);
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending....");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const result = await res.json();
+
+      if (res.ok) {
+        setStatus("Message sent!");
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        setStatus(`❌${result.error || "Failed to send message."}`);
+      }
+    } catch (err) {
+      console.error("Error sending:", err);
+      setStatus(`❌Error sending message.`);
+    }
+  };
+
   return (
     <div className="bg-gray-200 w-full font-mono py-16">
       <div className="container mx-auto px-4 max-w-4xl">
@@ -21,19 +63,27 @@ const Contact = () => {
         </div>
 
         <div className="m-5">
-          <form className="flex flex-col space-y-4">
+          <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
             <div className="border-l-4 border-black border-b-4 m-8">
               <input
                 type="text"
                 className="pb-2 p-4 font-bold outline-none border-none w-full"
                 placeholder="ENTER YOUR NAME*"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                required
               />
             </div>
             <div className="border-l-4 border-black border-b-4 m-8">
               <input
+                value={form.email}
+                name="email"
+                onChange={handleChange}
                 type="email"
                 placeholder="ENTER YOUR EMAIL*"
                 className="pb-2 p-4 font-bold outline-none border-none w-full"
+                required
               />
             </div>
             <div className="border-l-4 border-black border-b-4 m-8">
@@ -41,6 +91,10 @@ const Contact = () => {
                 type="text"
                 placeholder="CONTACT NUMBER"
                 className="pb-2 p-4 font-bold outline-none border-none w-full"
+                value={form.phone}
+                name="phone"
+                onChange={handleChange}
+                required
               />
             </div>
             <div className="border-l-4 border-black border-b-4 m-8">
@@ -50,16 +104,24 @@ const Contact = () => {
                 rows="5"
                 placeholder="GOT AN IDEA?"
                 className="pb-2 p-4 font-bold outline-none border-none w-full resize-none"
+                value={form.message}
+                onChange={handleChange}
               />
             </div>
             <div className="flex justify-center m-10">
-              <button className="border-l-4 border-r-4 border-black px-10 hover:bg-gray-300 transition-colors font-bold text-2xl py-2">
+              <button
+                type="submit"
+                className="border-l-4 border-r-4 border-black px-10 hover:bg-gray-200
+                hover:cursor-pointer transition-colors font-bold text-2xl py-2"
+              >
                 SUBMIT
               </button>
             </div>
+            {status && <p className="">{status}</p>}
           </form>
         </div>
       </div>
+      7
     </div>
   );
 };

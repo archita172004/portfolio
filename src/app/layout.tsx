@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
 import Aboutme from "@/components/Aboutme";
 import "./globals.css";
 import Skills from "@/components/Skills";
@@ -7,17 +6,6 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import HomeContent from "@/components/HomeContent";
 import Projects from "@/components/Projects";
-// import Navbar from "@/components/Navbar";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 export const metadata: Metadata = {
   title: "AC",
